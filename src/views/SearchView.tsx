@@ -36,7 +36,7 @@ const SearchView = () => {
   return (
     <>
       <Row justify="center">
-        <Col span={10}>
+        <Col xs={20} span={10}>
           <SearchForm handleQuerySubmit={handleQuerySubmit} />
         </Col>
       </Row>

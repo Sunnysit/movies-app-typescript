@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div className="App">
-      <Layout>
+      <Layout style={{ minHeight: "100vh" }}>
         <Content>
           <HeaderContent />
           <MainContent />

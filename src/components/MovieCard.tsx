@@ -8,7 +8,7 @@ const MovieCard = ({ movie }: MovieItemProps) => {
   const { Paragraph, Text } = Typography;
 
   const content = (
-    <Row style={{ width: 400 }}>
+    <Row style={{ width: 400, maxWidth: "85vw" }}>
       <Col span={24}>
         <Text type="secondary">
           <StarTwoTone /> &nbsp;Score
@@ -37,12 +37,7 @@ const MovieCard = ({ movie }: MovieItemProps) => {
 
   return (
     <Col flex={1}>
-      <Popover
-        trigger="click"
-        style={{ width: 400 }}
-        placement="right"
-        content={content}
-      >
+      <Popover trigger="click" placement="right" content={content}>
         <Card
           hoverable
           style={{ width: 240, margin: "0 auto 1rem" }}
