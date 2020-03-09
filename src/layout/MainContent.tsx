@@ -4,7 +4,7 @@ import DiscoverView from "../views/DiscoverView";
 import SearchView from "../views/SearchView";
 import { RadioChangeEvent } from "antd/lib/radio";
 
-const MainContent = () => {
+const MainContent: React.FC = () => {
   const [mode, setMode] = useState("discover");
 
   const handleModeChange = (e: RadioChangeEvent) => {

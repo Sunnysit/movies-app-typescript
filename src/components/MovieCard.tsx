@@ -3,7 +3,7 @@ import { Rate, Row, Col, Card, Typography, Popover } from "antd";
 import { StarTwoTone, BookTwoTone, CalendarTwoTone } from "@ant-design/icons";
 import { MovieItemProps } from "../config/typeInterface";
 
-const MovieCard = ({ movie }: MovieItemProps) => {
+const MovieCard: React.FC<MovieItemProps> = ({ movie }) => {
   const { Meta } = Card;
   const { Paragraph, Text } = Typography;
 

@@ -6,10 +6,10 @@ import { MovieItemList } from "../config/typeInterface";
 import { getMoviesByCategory } from "../services/movies";
 import { RadioChangeEvent } from "antd/lib/radio/interface";
 
-const DiscoverView = () => {
+const DiscoverView: React.FC = () => {
   const [movies, setMovies] = useState<MovieItemList>([]);
-  const [selectCategory, setSelectCategory] = useState("now_playing");
-  const [isLoading, setIsLoading] = useState(false);
+  const [selectCategory, setSelectCategory] = useState<string>("now_playing");
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
     setIsLoading(true);

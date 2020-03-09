@@ -3,14 +3,15 @@ import { Row, Col, Typography } from "antd";
 import SearchForm from "../components/SearchForm";
 import MoviesList from "../components/MoviesList";
 import Loading from "../shared/Loading";
+import { MovieItemList } from "../config/typeInterface";
 import { searchMoviesByQuery } from "../services/movies";
 
-const SearchView = () => {
+const SearchView: React.FC = () => {
   const { Text } = Typography;
 
-  const [searchResult, setSearchResult] = useState([]);
-  const [message, setMessage] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
+  const [searchResult, setSearchResult] = useState<MovieItemList>([]);
+  const [message, setMessage] = useState<string>("");
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const handleQuerySubmit = (value: string) => {
     const userInput = value.trim();
@@ -36,7 +37,7 @@ const SearchView = () => {
   return (
     <>
       <Row justify="center">
-        <Col xs={20} span={10}>
+        <Col xs={20} md={10}>
           <SearchForm handleQuerySubmit={handleQuerySubmit} />
         </Col>
       </Row>

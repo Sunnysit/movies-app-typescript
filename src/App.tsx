@@ -5,7 +5,7 @@ import FooterContent from "./layout/FooterContent";
 import MainContent from "./layout/MainContent";
 import HeaderContent from "./layout/HeaderContent";
 
-function App() {
+const App: React.FC = () => {
   const { Footer, Content } = Layout;
 
   return (
@@ -22,6 +22,6 @@ function App() {
       <BackTop />
     </div>
   );
-}
+};
 
 export default App;

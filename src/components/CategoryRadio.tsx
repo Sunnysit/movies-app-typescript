@@ -1,7 +1,10 @@
 import React from "react";
 import { Radio } from "antd";
+import { CategoryRadioProps } from "../config/typeInterface";
 
-const CategoryRadio = ({ handleCategoryChange }: any) => {
+const CategoryRadio: React.FC<CategoryRadioProps> = ({
+  handleCategoryChange
+}) => {
   return (
     <div
       style={{ display: "flex", justifyContent: "center", marginBottom: 24 }}

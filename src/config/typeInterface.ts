@@ -1,19 +1,29 @@
-export interface MovieItem {
+import { RadioChangeEvent } from "antd/lib/radio/interface";
+
+export type MovieItem = {
   id: number;
   title: string;
   overview: string;
   release_date: string;
   poster_path: string;
   vote_average: number;
-}
+};
 
-export interface MovieItemList extends Array<MovieItem> {}
+export type MovieItemList = Array<MovieItem>;
 
-export interface MovieItemListProps {
+export type MovieItemListProps = {
   data: MovieItemList;
-}
+};
 
-export interface MovieItemProps {
+export type MovieItemProps = {
   movie: MovieItem;
   key: number;
+};
+
+export interface CategoryRadioProps {
+  handleCategoryChange: (e: RadioChangeEvent) => void;
 }
+
+export type SearchFromProps = {
+  handleQuerySubmit: (value: string) => void;
+};

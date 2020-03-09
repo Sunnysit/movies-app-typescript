@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography, Row, Col } from "antd";
 
-const HeaderContent = () => {
+const HeaderContent: React.FC = () => {
   const { Title } = Typography;
 
   return (
