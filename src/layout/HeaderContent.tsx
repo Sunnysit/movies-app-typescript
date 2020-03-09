@@ -8,7 +8,9 @@ const HeaderContent = () => {
   return (
     <Row justify="center">
       <Col span={24} style={{ textAlign: "center" }}>
-        <Title style={{ color: blue[0] }}>Hey! Check this out Movies!</Title>
+        <Title style={{ margin: 0, paddingTop: 24 }}>
+          Hey! Check this out Movies!
+        </Title>
       </Col>
     </Row>
   );

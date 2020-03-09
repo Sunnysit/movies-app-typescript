@@ -6,15 +6,13 @@ import MainContent from "./layout/MainContent";
 import HeaderContent from "./layout/HeaderContent";
 
 function App() {
-  const { Header, Footer, Content } = Layout;
+  const { Footer, Content } = Layout;
 
   return (
     <div className="App">
       <Layout>
-        <Header>
-          <HeaderContent />
-        </Header>
         <Content>
+          <HeaderContent />
           <MainContent />
         </Content>
         <Footer>
