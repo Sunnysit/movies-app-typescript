@@ -1,5 +1,5 @@
 import React from "react";
-import { Statistic, Row, Col, Card, Typography, Popover } from "antd";
+import { Rate, Row, Col, Card, Typography, Popover } from "antd";
 import { StarTwoTone, BookTwoTone, CalendarTwoTone } from "@ant-design/icons";
 import { MovieItemProps } from "../config/typeInterface";
 
@@ -10,15 +10,14 @@ const MovieCard = ({ movie }: MovieItemProps) => {
   const content = (
     <Row style={{ width: 400 }}>
       <Col span={24}>
-        <Statistic
-          title={
-            <>
-              <StarTwoTone /> Score
-            </>
-          }
-          value={movie.vote_average}
-          suffix="/ 10"
-        />
+        <Text type="secondary">
+          <StarTwoTone /> &nbsp;Score
+        </Text>
+        <br />
+        <>
+          <Rate disabled defaultValue={movie.vote_average / 2} />
+          <Text>&nbsp;{movie.vote_average}</Text>
+        </>
       </Col>
       <Col span={24}>
         <Text type="secondary">
@@ -38,18 +37,29 @@ const MovieCard = ({ movie }: MovieItemProps) => {
 
   return (
     <Col flex={1}>
-      <Popover style={{ width: 400 }} placement="right" content={content}>
+      <Popover
+        trigger="click"
+        style={{ width: 400 }}
+        placement="right"
+        content={content}
+      >
         <Card
           hoverable
           style={{ width: 240, margin: "0 auto 1rem" }}
           cover={
-            <img
-              alt={movie.title + " poster"}
-              src={`https://image.tmdb.org/t/p/w400${movie.poster_path}`}
-            />
+            movie.poster_path && (
+              <img
+                alt={movie.title + " poster"}
+                src={`https://image.tmdb.org/t/p/w400${movie.poster_path}`}
+              />
+            )
           }
         >
-          <Meta style={{ textAlign: "center" }} title={movie.title} />
+          <Meta
+            style={{ textAlign: "center" }}
+            title={movie.title}
+            description={!movie.poster_path && movie.overview}
+          />
         </Card>
       </Popover>
     </Col>

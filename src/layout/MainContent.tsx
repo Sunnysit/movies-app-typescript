@@ -1,36 +1,31 @@
-import React, { useState, useEffect } from "react";
-import MoviesList from "../components/MoviesList";
-import Loading from "../shared/Loading";
-import CategoryRadio from "../components/CategoryRadio";
-import { MovieItemList } from "../config/typeInterface";
-import { getMoviesByCategory, searchMoviesByQuery } from "../services/movies";
-import { RadioChangeEvent } from "antd/lib/radio/interface";
+import React, { useState } from "react";
+import { Radio } from "antd";
+import DiscoverView from "../views/DiscoverView";
+import SearchView from "../views/SearchView";
+import { RadioChangeEvent } from "antd/lib/radio";
 
 const MainContent = () => {
-  const [movies, setMovies] = useState<MovieItemList>([]);
-  const [selectCategory, setSelectCategory] = useState("now_playing");
-  const [isLoading, setIsLoading] = useState(false);
+  const [mode, setMode] = useState("discover");
 
-  useEffect(() => {
-    setIsLoading(true);
-    getMoviesByCategory(selectCategory).then(response => {
-      console.log(response);
-      response.status === 200
-        ? setMovies(response.data.results)
-        : console.log("Error", response);
-
-      setIsLoading(false);
-    });
-  }, [selectCategory]);
-
-  const handleCategoryChange = (e: RadioChangeEvent) => {
-    setSelectCategory(e.target.value);
+  const handleModeChange = (e: RadioChangeEvent) => {
+    setMode(e.target.value);
   };
 
   return (
     <div style={{ maxWidth: 1000, margin: "2rem auto" }}>
-      <CategoryRadio handleCategoryChange={handleCategoryChange} />
-      {isLoading ? <Loading /> : <MoviesList data={movies} />}
+      <Radio.Group
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          margin: "1rem auto"
+        }}
+        onChange={handleModeChange}
+        value={mode}
+      >
+        <Radio value="discover">Discover Movie</Radio>
+        <Radio value="search">Search Movie</Radio>
+      </Radio.Group>
+      {mode === "discover" ? <DiscoverView /> : <SearchView />}
     </div>
   );
 };
