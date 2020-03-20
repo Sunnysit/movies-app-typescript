@@ -1,5 +1,12 @@
 import { RadioChangeEvent } from "antd/lib/radio/interface";
 
+export enum MovieCategory {
+  NOW_PLAYING = "now_playing",
+  POPULAR = "popular",
+  TOP_RATED = "top_rated",
+  UPCOMING = "upcoming"
+}
+
 export type MovieItem = {
   id: number;
   title: string;
