@@ -1,4 +1,5 @@
 import i18n from 'i18next';
+import LanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
 
 //Languages translation resource
@@ -20,9 +21,21 @@ const resources = {
 
 i18n
   .use(initReactI18next) // passes i18n down to react-i18next
+  .use(LanguageDetector)
   .init({
     resources,
-    lng: 'en',
+    detection: {
+      order: [
+        'querystring',
+        'cookie',
+        'localStorage',
+        'navigator',
+        'htmlTag',
+        'path',
+        'subdomain',
+      ],
+    },
+    // lng: 'en',
     fallbackLng: 'en',
     keySeparator: false, // we do not use keys in form messages.welcome
 

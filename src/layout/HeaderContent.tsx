@@ -22,7 +22,11 @@ const HeaderContent: React.FC = () => {
             English
           </Button>
           <Button
-            type={i18n.language === 'zh' ? 'primary' : 'default'}
+            type={
+              i18n.language === 'zh' || i18n.language === 'zh-CN'
+                ? 'primary'
+                : 'default'
+            }
             onClick={() => handleLanguageChange('zh')}
           >
             中文
