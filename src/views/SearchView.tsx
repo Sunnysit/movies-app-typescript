@@ -26,8 +26,7 @@ const SearchView: React.FC = () => {
             setMessage('');
             setSearchResult(response.data.results);
           } else {
-            const msgPrefix = t('Search No Result');
-            setMessage(`${msgPrefix} ${userInput}`);
+            setMessage(t('Search No Result', { keyword: userInput }));
           }
         } else {
           console.log('Error', response);

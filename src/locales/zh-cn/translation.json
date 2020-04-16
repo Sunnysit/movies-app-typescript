@@ -12,6 +12,6 @@
   "Movie Release Date": "上映日期",
   "Movie Overview": "电影简介",
   "Search Placeholder": "输入与电影相关的关键字进行搜索",
-  "Search No Result": "对不起！没找到电影包含关键字",
+  "Search No Result": "对不起！没找到包含关键字 {{keyword}} 的电影",
   "Search Invalid Word": "请输入有效关键字"
 }

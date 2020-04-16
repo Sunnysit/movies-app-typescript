@@ -12,6 +12,6 @@
   "Movie Release Date": "Release Date",
   "Movie Overview": "Overview",
   "Search Placeholder": "input keyword about any movies.....",
-  "Search No Result": "Sorry! No result contain keyword",
+  "Search No Result": "Sorry! No result contain keyword {{keyword}}",
   "Search Invalid Word": "Invalid input text"
 }
