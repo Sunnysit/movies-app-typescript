@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Input } from 'antd';
 import { SearchFromProps } from '../config/typeInterface';
@@ -10,9 +10,9 @@ const SearchForm: React.FC<SearchFromProps> = ({ handleQuerySubmit }) => {
 
   const { t } = useTranslation();
 
-  useEffect(() => {
-    if (searchText.length > 0) handleQuerySubmit(searchText);
-  }, [t]);
+  // useEffect(() => {
+  //   if (searchText.length > 0) handleQuerySubmit(searchText);
+  // }, [t]);
 
   const handleTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchText(e.target.value);
